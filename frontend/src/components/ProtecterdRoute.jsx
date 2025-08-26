@@ -2,9 +2,14 @@ import { Navigate, Outlet } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
+import { use } from "react";
 
 function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
+  useEffect(() => {
+    auth().catch((error) => setIsAuthenticated(false));
+  }, []);
+
   const refreshToken = async () => {
     const refrershToken = localStorage.getItem(REFRESH_TOKEN);
     try {
