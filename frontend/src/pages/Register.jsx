@@ -3,7 +3,7 @@ import From from "../components/From"
 function Register(){
     return(
         
-        <From method="register" Route="/api/user/register/"/>
+        <From method="register" route="/api/user/register/"/>
     )
 }
 

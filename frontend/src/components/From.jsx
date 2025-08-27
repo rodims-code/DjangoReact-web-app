@@ -50,9 +50,9 @@ function Form({ route, method }) {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
             />
-            {loading && <LoadingIndicator />}
-            <button className="form-button" type="submit">
-                {name}
+           
+            <button className="form-button" type="submit" disabled={loading}>
+                {loading ? "Chargement..." : name}
             </button>
         </form>
     );
