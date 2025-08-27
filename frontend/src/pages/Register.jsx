@@ -1,6 +1,9 @@
+import From from "../components/From"
+
 function Register(){
     return(
-        <div>Register page</div>
+        
+        <From method="register" Route="/api/user/register/"/>
     )
 }
 

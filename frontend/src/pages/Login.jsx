@@ -1,6 +1,10 @@
+import From from "../components/From"
+
+
+
 function Login(){
     return(
-        <div>Login page</div>
+        <From method="login" Route="/api/token"/>
     )
 }
 
