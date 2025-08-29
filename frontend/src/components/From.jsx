@@ -2,7 +2,8 @@ import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css"
+import "../styles/Form.css";
+import LoandingIndecator from "../components/LoandingIndecator";
 
 
 
@@ -51,9 +52,9 @@ function Form({ route, method }) {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
             />
-           
-            <button className="form-button" type="submit" disabled={loading}>
-                {loading ? "Chargement..." : name}
+           {loading && <LoandingIndecator/>}
+            <button className="form-button" type="submit" >
+                {name}
             </button>
         </form>
     );
